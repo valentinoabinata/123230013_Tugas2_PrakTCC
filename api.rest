@@ -1,0 +1,42 @@
+# ============================================
+# API TESTING - Aplikasi Catatan
+# Gunakan ekstensi REST Client di VS Code
+# ============================================
+
+# GET : Test server
+GET http://localhost:3000/ping HTTP/1.1
+
+###
+# GET : Semua Catatan
+GET http://localhost:3000/api/v1/catatan HTTP/1.1
+Content-Type: application/json
+
+###
+# GET : Catatan by ID
+GET http://localhost:3000/api/v1/catatan/1 HTTP/1.1
+Content-Type: application/json
+
+###
+# POST : Tambah Catatan Baru
+POST http://localhost:3000/api/v1/catatan HTTP/1.1
+Content-Type: application/json
+
+{
+  "judul": "Judul Catatan Saya",
+  "isi": "Ini adalah isi dari catatan saya yang pertama."
+}
+
+###
+# PUT : Update Catatan
+PUT http://localhost:3000/api/v1/catatan/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "judul": "Judul Catatan Diperbarui",
+  "isi": "Isi catatan telah diperbarui."
+}
+
+###
+# DELETE : Hapus Catatan
+DELETE http://localhost:3000/api/v1/catatan/1 HTTP/1.1
+Content-Type: application/json
